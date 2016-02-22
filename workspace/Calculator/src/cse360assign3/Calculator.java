@@ -11,12 +11,14 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/*public Calculator()
 	 * The constructor for the Calculator class
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	/*public int getTotal
 	 * This method is used to get the current total stored in the calculator
@@ -30,6 +32,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total=total+value;
+		history=history+" + "+value;
 	}
 	/*public void subtract
 	 * this method is used to subtract a value from the total stored value
@@ -37,6 +40,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total=total-value;
+		history=history+" - "+value;
 	}
 	/* public void multiply
 	 * this method is used to multiply the current total by a value
@@ -44,6 +48,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total=total*value;
+		history=history+" * "+value;
 	}
 	/*public void divide
 	 * this method is used to divide the current total by a value
@@ -52,15 +57,18 @@ public class Calculator {
 	public void divide (int value) {
 		if(value==0)
 		{
-			total=0; return;
+			total=0; 
+			history=history+" / "+value;
+			return;
 		}	
 		total=total/value;
+		history=history+" / "+value;
 	}
 	/*public String getHistory
 	 * this method is used to get the history of operations used to
 	 * obtain the current value
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }

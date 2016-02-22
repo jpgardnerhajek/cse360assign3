@@ -68,7 +68,11 @@ public class CalculatorTest {
 	@Test
 	public void testGetHistory() {
 		//meant to test getHistory
-		fail("Not yet implemented");
+		Calculator calc = new Calculator();
+		calc.add(6);
+		calc.divide(3);
+		calc.multiply(8);
+		assertTrue(calc.getHistory().equals("0 + 6 / 3 * 8"));
 	}
 
 }
